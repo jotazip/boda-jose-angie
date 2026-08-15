@@ -5,6 +5,7 @@ if (INTRO_ENABLED) document.documentElement.classList.add('intro-lock');
 const introEl = document.getElementById('scroll-intro');
 if (introEl && !INTRO_ENABLED) introEl.style.display = 'none';
 const sparkContainer = document.getElementById('introSparkles');
+const welcomeSparkContainer = document.getElementById('welcomeSparkles');
 
 // Estrellas titilando en cada mitad de la carta
 document.querySelectorAll('.intro-stars').forEach((container) => {
@@ -20,8 +21,9 @@ document.querySelectorAll('.intro-stars').forEach((container) => {
   }
 });
 
-function burstSparkles(cx, cy) {
-  if (!sparkContainer) return;
+function burstSparkles(cx, cy, container) {
+  const target = container || sparkContainer;
+  if (!target) return;
   const count = 44;
   for (let i = 0; i < count; i++) {
     const s = document.createElement('div');
@@ -35,7 +37,7 @@ function burstSparkles(cx, cy) {
     s.style.setProperty('--spark-end', `translate(${ex}px, ${ey}px)`);
     s.style.animationDuration = `${1.4 + Math.random() * 0.8}s`;
     s.style.animationDelay = `${Math.random() * 0.6}s`;
-    sparkContainer.appendChild(s);
+    target.appendChild(s);
     setTimeout(() => s.remove(), 2600);
   }
 }
@@ -99,14 +101,21 @@ if (introEl) {
   });
 }
 
-function revealSite() {
+function revealSite(evt) {
   if (!welcomeEl) return;
+
+  const cx = evt && evt.clientX ? evt.clientX : window.innerWidth / 2;
+  const cy = evt && evt.clientY ? evt.clientY : window.innerHeight / 2;
+  welcomeEl.style.setProperty('--btn-x', `${cx}px`);
+  welcomeEl.style.setProperty('--btn-y', `${cy}px`);
+  burstSparkles(cx, cy, welcomeSparkContainer);
+
   welcomeEl.classList.add('hidden');
   document.documentElement.classList.add('intro-done');
   document.documentElement.classList.remove('intro-lock');
   setTimeout(() => {
     welcomeEl.classList.add('gone');
-  }, 900);
+  }, 1200);
 }
 
 if (welcomeBtn) {

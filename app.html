@@ -42,6 +42,7 @@
     <p class="welcome-p welcome-p2">Queremos invitaros a celebrar este día con nosotros y que solo tengáis que preocuparos de disfrutar.<br>La comida corre por nuestra cuenta.</p>
     <button type="button" class="welcome-btn" id="welcomeBtn">Más información</button>
   </div>
+  <div class="intro-sparkles" id="welcomeSparkles" aria-hidden="true"></div>
 </div>
 
 <div class="fern-banner" aria-hidden="true"></div>
@@ -90,7 +91,7 @@
       <p class="subtitle reveal d5">Queremos que formes parte<br>de nuestro día</p>
 
       <div class="itinerary-path reveal d6">
-        <img src="assets/sendero-v2.png?v=2" alt="" class="itinerary-img">
+        <img src="assets/sendero.png?v=5" alt="" class="itinerary-img">
       </div>
 
       <p class="message reveal d7">Será un día lleno de amor, risas y momentos<br>que recordaremos para siempre.</p>
@@ -131,13 +132,17 @@
   <section class="countdown-section" id="cuenta-regresiva">
     <p class="section-eyebrow reveal-io">Faltan</p>
     <div class="countdown reveal-io" id="countdown">
-      <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label">días</span></div>
-      <div class="cd-sep">·</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">horas</span></div>
-      <div class="cd-sep">·</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">min</span></div>
-      <div class="cd-sep">·</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">seg</span></div>
+      <div class="cd-unit cd-unit-days">
+        <span class="cd-num cd-num-days" id="cd-days">00</span>
+        <span class="cd-label">días</span>
+      </div>
+      <div class="cd-subrow">
+        <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">horas</span></div>
+        <div class="cd-sep">·</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">min</span></div>
+        <div class="cd-sep">·</div>
+        <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">seg</span></div>
+      </div>
     </div>
   </section>
 
