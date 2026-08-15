@@ -76,6 +76,17 @@ function openIntro() {
   }, 3000);
 
   scheduleWelcomeSequence();
+  startBgMusic();
+}
+
+// Música de fondo: empieza en el segundo 18 y se corta en 03:07 (187s), sin bucle
+// El archivo ya viene recortado (del 0:20 al 3:07 del original), así que
+// solo hace falta reproducirlo desde el principio, sin bucle.
+const bgMusic = document.getElementById('bgMusic');
+
+function startBgMusic() {
+  if (!bgMusic) return;
+  bgMusic.play().catch(() => {});
 }
 
 if (introEl) {
