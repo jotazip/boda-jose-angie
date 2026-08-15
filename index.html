@@ -5,263 +5,64 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>José & Angie — Nos casamos</title>
 <meta name="description" content="Invitación de boda de José y Angie — 18 de octubre de 2026, Alicante">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Great+Vibes&family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,700&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<style>
+  html, body {
+    margin: 0;
+    height: 100%;
+    background: #e7ddc4;
+    overflow: hidden;
+  }
+
+  .phone-stage {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .phone-frame {
+    width: 100%;
+    max-width: 480px;
+    height: 100%;
+    background: #fff;
+  }
+
+  .phone-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  /* Solo en pantallas anchas se ve el "marco de teléfono"; en un móvil real
+     el iframe ya ocupa el 100% y esto no se nota. */
+  @media (min-width: 561px) {
+    html, body {
+      overflow: auto;
+    }
+
+    .phone-stage {
+      min-height: 100%;
+      padding: 4vh 0;
+      box-sizing: border-box;
+    }
+
+    .phone-frame {
+      height: 92vh;
+      min-height: 640px;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 30px 70px rgba(20, 20, 10, 0.35), 0 0 0 10px #1c1c1c, 0 0 0 12px #3a3a3a;
+    }
+  }
+</style>
 </head>
 <body>
-
-<!-- PANTALLA DE PERGAMINO: se abre al tocar/hacer clic -->
-<div id="scroll-intro" class="scroll-intro" role="button" tabindex="0" aria-label="Toca para abrir la invitación">
-  <div class="intro-scroll">
-    <div class="intro-rod intro-rod-top" aria-hidden="true">
-      <svg viewBox="0 0 300 22" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="4" width="300" height="14" rx="7" fill="#8a5a34"/>
-        <rect x="0" y="4" width="300" height="5" rx="2.5" fill="#a97645" opacity="0.7"/>
-        <circle cx="10" cy="11" r="11" fill="#7a4c2a"/>
-        <circle cx="10" cy="11" r="6" fill="#c9a668"/>
-        <circle cx="290" cy="11" r="11" fill="#7a4c2a"/>
-        <circle cx="290" cy="11" r="6" fill="#c9a668"/>
-      </svg>
-    </div>
-
-    <div class="intro-parchment">
-      <div class="intro-seal" aria-hidden="true">
-        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-          <path d="M60 6 C70 6 72 16 82 14 C90 12 96 20 92 28 C100 32 100 42 92 46 C98 54 92 62 84 60 C86 70 76 76 68 70 C64 78 54 78 50 70 C42 76 32 70 34 60 C26 62 20 54 26 46 C18 42 18 32 26 28 C22 20 28 12 36 14 C46 16 48 6 60 6 Z"
-                fill="#7a1f2b" stroke="#5c1620" stroke-width="1"/>
-          <circle cx="60" cy="60" r="34" fill="none" stroke="#5c1620" stroke-width="0.8" opacity="0.5"/>
-          <text x="60" y="72" text-anchor="middle" font-family="'Alex Brush', cursive" font-size="42" fill="#e8c88a">J&amp;A</text>
-        </svg>
-      </div>
-      <p class="intro-cta">Toca para abrir<br>nuestra invitación</p>
-    </div>
-
-    <div class="intro-rod intro-rod-bottom" aria-hidden="true">
-      <svg viewBox="0 0 300 22" xmlns="http://www.w3.org/2000/svg">
-        <rect x="0" y="4" width="300" height="14" rx="7" fill="#8a5a34"/>
-        <rect x="0" y="4" width="300" height="5" rx="2.5" fill="#a97645" opacity="0.7"/>
-        <circle cx="10" cy="11" r="11" fill="#7a4c2a"/>
-        <circle cx="10" cy="11" r="6" fill="#c9a668"/>
-        <circle cx="290" cy="11" r="11" fill="#7a4c2a"/>
-        <circle cx="290" cy="11" r="6" fill="#c9a668"/>
-      </svg>
+  <div class="phone-stage">
+    <div class="phone-frame">
+      <iframe src="app.html" title="Invitación de boda — José & Angie"></iframe>
     </div>
   </div>
-
-  <div class="intro-sparkles" id="introSparkles" aria-hidden="true"></div>
-</div>
-
-<div class="fern-banner" aria-hidden="true"></div>
-
-<div class="petals" id="petals" aria-hidden="true"></div>
-
-<main>
-
-  <!-- PORTADA -->
-  <section class="hero" id="inicio">
-    <!-- Esquina Colombia: orquídea (flor nacional), en paralelo al colibrí -->
-    <div class="hero-leaf leaf-tl" aria-hidden="true">
-      <img src="assets/orquidea.png" alt="" class="orchid-img">
-    </div>
-
-    <!-- Esquina Alicante: Castillo de Santa Bárbara -->
-    <div class="hero-leaf leaf-br" aria-hidden="true">
-      <img src="assets/castillo.png" alt="" class="castle-img">
-    </div>
-
-    <!-- Esquina Colombia: Valle de Cocora -->
-    <div class="hero-leaf leaf-bl" aria-hidden="true">
-      <img src="assets/cocora.png" alt="" class="cocora-img">
-    </div>
-
-    <!-- Mariposas -->
-    <div class="butterflies" aria-hidden="true">
-      <div class="butterfly bf5 monarch-blue"><img src="assets/mariposa-azul.png" alt="" class="bfly-img"></div>
-      <div class="butterfly bf6 monarch-blue"><img src="assets/mariposa-azul.png" alt="" class="bfly-img"></div>
-      <div class="butterfly bf7 monarch-blue"><img src="assets/mariposa-verde.png" alt="" class="bfly-img"></div>
-      <div class="butterfly bf8 monarch-blue"><img src="assets/mariposa-verde.png" alt="" class="bfly-img"></div>
-    </div>
-
-    <!-- Colibrí -->
-    <div id="hummingbird" class="hummingbird" aria-hidden="true">
-      <img src="assets/colibri-azul.png" alt="" class="hb-img">
-    </div>
-
-    <div class="hero-content">
-      <h1 class="names">
-        <span class="reveal d1">José</span>
-        <span class="amp reveal d2">&amp;</span>
-        <span class="reveal d3">Angie</span>
-      </h1>
-
-      <p class="eyebrow reveal d4">· Nos casamos ·</p>
-      <p class="subtitle reveal d5">queremos que formes parte<br>de nuestro día</p>
-
-      <div class="details-row reveal d6">
-        <div class="detail-block">
-          <svg class="icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M32 6 L38 18 H26 Z" fill="#b08d57"/>
-            <rect x="28" y="18" width="8" height="6" fill="#b08d57"/>
-            <path d="M16 58 V34 L32 22 L48 34 V58 Z" fill="none" stroke="#b08d57" stroke-width="2.5"/>
-            <rect x="28" y="42" width="8" height="16" fill="#b08d57"/>
-            <path d="M10 58 H54" stroke="#b08d57" stroke-width="2.5"/>
-          </svg>
-          <p class="time">13:00 hs</p>
-          <p class="label">Ceremonia religiosa</p>
-          <p class="place">Parroquia Santa Teresa<br>de Ávila</p>
-          <p class="city">Alicante</p>
-        </div>
-
-        <div class="date-block">
-          <p class="dow">Domingo</p>
-          <p class="dom">18</p>
-          <p class="month">Octubre</p>
-          <p class="year">2026</p>
-        </div>
-
-        <div class="detail-block">
-          <svg class="icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16 58 V26 M48 58 V26" stroke="#b08d57" stroke-width="2.5"/>
-            <path d="M16 26 L32 14 L48 26" stroke="#b08d57" stroke-width="2.5" fill="none"/>
-            <path d="M12 26 H52" stroke="#b08d57" stroke-width="2.5"/>
-            <circle cx="22" cy="34" r="2" fill="#b08d57"/>
-            <circle cx="32" cy="30" r="2" fill="#b08d57"/>
-            <circle cx="42" cy="34" r="2" fill="#b08d57"/>
-          </svg>
-          <p class="time">Al finalizar ceremonia</p>
-          <p class="label">Celebraremos juntos en</p>
-          <p class="place">Jardines de San Juan</p>
-          <p class="city">Alicante</p>
-        </div>
-      </div>
-
-      <p class="message reveal d7">Será un día lleno de amor, risas y momentos<br>que recordaremos para siempre.</p>
-      <p class="message-accent reveal d8">¡Nos haría muy felices contar contigo!</p>
-    </div>
-  </section>
-
-  <!-- DIVISOR ORNAMENTAL: azulejo alicantino + tejido vueltiao colombiano -->
-  <div class="ornament-divider" aria-hidden="true">
-    <svg viewBox="0 0 400 20" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="var(--gold)" stroke-width="0.6" fill="none" opacity="0.6">
-        <path d="M0 10 H60"/>
-        <path d="M70 10 L80 3 L90 10 L80 17 Z"/>
-        <path d="M100 10 L110 3 L120 10 L110 17 Z"/>
-        <path d="M95 10 H100 M120 10 H125"/>
-        <path d="M135 4 L145 10 L135 16 L125 10 Z"/>
-        <path d="M155 16 L165 10 L155 4 L145 10 Z"/>
-        <path d="M175 4 L185 10 L175 16 L165 10 Z"/>
-        <circle cx="200" cy="10" r="3.4"/>
-        <path d="M215 4 L225 10 L215 16 L205 10 Z"/>
-        <path d="M235 16 L245 10 L235 4 L225 10 Z"/>
-        <path d="M255 4 L265 10 L255 16 L245 10 Z"/>
-        <path d="M275 10 H280 M300 10 H305"/>
-        <path d="M280 10 L290 3 L300 10 L290 17 Z"/>
-        <path d="M310 10 L320 3 L330 10 L320 17 Z"/>
-        <path d="M340 10 H400"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- FRASE: dos tierras, un mismo amor -->
-  <section class="magic-quote">
-    <p class="quote-text reveal-io">Entre el Mediterráneo y los Andes,<br>el amor encontró su propio Macondo.</p>
-    <div class="quote-hb" aria-hidden="true">✦</div>
-  </section>
-
-  <!-- CUENTA REGRESIVA -->
-  <section class="countdown-section" id="cuenta-regresiva">
-    <p class="section-eyebrow reveal-io">Faltan</p>
-    <div class="countdown reveal-io" id="countdown">
-      <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label">días</span></div>
-      <div class="cd-sep">·</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">horas</span></div>
-      <div class="cd-sep">·</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">min</span></div>
-      <div class="cd-sep">·</div>
-      <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">seg</span></div>
-    </div>
-  </section>
-
-  <!-- UBICACIONES -->
-  <section class="locations" id="detalles">
-    <h2 class="section-title reveal-io">Cómo llegar</h2>
-    <div class="loc-grid">
-      <div class="loc-card reveal-io">
-        <h3>Ceremonia</h3>
-        <p>Parroquia Santa Teresa de Ávila<br>Alicante · 13:00 hs</p>
-        <div class="map-wrap">
-          <iframe
-            title="Mapa Parroquia Santa Teresa de Ávila, Alicante"
-            src="https://www.google.com/maps?q=Parroquia+Santa+Teresa+de+Avila+Alicante&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Parroquia+Santa+Teresa+de+Avila+Alicante" target="_blank" rel="noopener">Ver en Google Maps →</a>
-      </div>
-      <div class="loc-card reveal-io">
-        <h3>Restaurante</h3>
-        <p>Jardines de San Juan<br>Alicante · Al finalizar ceremonia</p>
-        <div class="map-wrap">
-          <iframe
-            title="Mapa Av. de Alicante 51, Sant Joan d'Alacant"
-            src="https://www.google.com/maps?q=Av.+de+Alicante+51+03550+Sant+Joan+d%27Alacant+Alicante&output=embed"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade">
-          </iframe>
-        </div>
-        <a class="map-link" href="https://www.google.com/maps/search/?api=1&query=Av.+de+Alicante+51+03550+Sant+Joan+d%27Alacant+Alicante" target="_blank" rel="noopener">Ver en Google Maps →</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- DIVISOR ORNAMENTAL -->
-  <div class="ornament-divider" aria-hidden="true">
-    <svg viewBox="0 0 400 20" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
-      <g stroke="var(--gold)" stroke-width="0.6" fill="none" opacity="0.6">
-        <path d="M0 10 H60"/>
-        <path d="M70 10 L80 3 L90 10 L80 17 Z"/>
-        <path d="M100 10 L110 3 L120 10 L110 17 Z"/>
-        <path d="M95 10 H100 M120 10 H125"/>
-        <path d="M135 4 L145 10 L135 16 L125 10 Z"/>
-        <path d="M155 16 L165 10 L155 4 L145 10 Z"/>
-        <path d="M175 4 L185 10 L175 16 L165 10 Z"/>
-        <circle cx="200" cy="10" r="3.4"/>
-        <path d="M215 4 L225 10 L215 16 L205 10 Z"/>
-        <path d="M235 16 L245 10 L235 4 L225 10 Z"/>
-        <path d="M255 4 L265 10 L255 16 L245 10 Z"/>
-        <path d="M275 10 H280 M300 10 H305"/>
-        <path d="M280 10 L290 3 L300 10 L290 17 Z"/>
-        <path d="M310 10 L320 3 L330 10 L320 17 Z"/>
-        <path d="M340 10 H400"/>
-      </g>
-    </svg>
-  </div>
-
-  <!-- NOTA PERSONAL -->
-  <section class="note-section" id="nota">
-    <div class="note-paper reveal-io">
-      <p class="note-title">Invitación personal e intransferible</p>
-      <p class="note-body">
-        Hemos preparado este día con mucho cariño<br>
-        y cada detalle pensado para vosotros.<br>
-        Por motivos de organización,<br>
-        os rogamos que asistáis <strong>únicamente</strong><br>
-        las personas indicadas en esta invitación.
-      </p>
-      <p class="note-thanks">Gracias por comprenderlo y por ser parte de nuestro día.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>José &amp; Angie · 18.10.2026</p>
-  </footer>
-
-</main>
-
-<script src="script.js"></script>
 </body>
 </html>
