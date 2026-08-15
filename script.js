@@ -1,3 +1,59 @@
+// Pantalla de pergamino: bloquea el scroll hasta que se abre
+// TEMPORALMENTE DESACTIVADA mientras se ajusta el móvil (ver INTRO_ENABLED)
+const INTRO_ENABLED = false;
+if (INTRO_ENABLED) document.documentElement.classList.add('intro-lock');
+
+const introEl = document.getElementById('scroll-intro');
+if (introEl && !INTRO_ENABLED) introEl.style.display = 'none';
+const sparkContainer = document.getElementById('introSparkles');
+
+function burstSparkles(cx, cy) {
+  if (!sparkContainer) return;
+  const count = 20;
+  for (let i = 0; i < count; i++) {
+    const s = document.createElement('div');
+    s.className = 'intro-spark';
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 60 + Math.random() * 140;
+    const ex = Math.cos(angle) * dist;
+    const ey = Math.sin(angle) * dist;
+    s.style.left = `${cx}px`;
+    s.style.top = `${cy}px`;
+    s.style.setProperty('--spark-end', `translate(${ex}px, ${ey}px)`);
+    s.style.animationDelay = `${Math.random() * 0.15}s`;
+    sparkContainer.appendChild(s);
+    setTimeout(() => s.remove(), 1300);
+  }
+}
+
+function openIntro(evt) {
+  if (!introEl || introEl.classList.contains('opening')) return;
+  introEl.classList.add('opening');
+
+  const cx = evt && evt.clientX ? evt.clientX : window.innerWidth / 2;
+  const cy = evt && evt.clientY ? evt.clientY : window.innerHeight / 2;
+  burstSparkles(cx, cy);
+
+  setTimeout(() => {
+    introEl.classList.add('hidden');
+    document.documentElement.classList.remove('intro-lock');
+  }, 550);
+
+  setTimeout(() => {
+    introEl.style.display = 'none';
+  }, 1500);
+}
+
+if (introEl) {
+  introEl.addEventListener('click', openIntro);
+  introEl.addEventListener('keydown', (evt) => {
+    if (evt.key === 'Enter' || evt.key === ' ') {
+      evt.preventDefault();
+      openIntro(evt);
+    }
+  });
+}
+
 // Countdown to the wedding
 const WEDDING_DATE = new Date('2026-10-18T13:00:00+02:00').getTime();
 

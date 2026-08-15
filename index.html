@@ -12,6 +12,47 @@
 </head>
 <body>
 
+<!-- PANTALLA DE PERGAMINO: se abre al tocar/hacer clic -->
+<div id="scroll-intro" class="scroll-intro" role="button" tabindex="0" aria-label="Toca para abrir la invitación">
+  <div class="intro-scroll">
+    <div class="intro-rod intro-rod-top" aria-hidden="true">
+      <svg viewBox="0 0 300 22" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="4" width="300" height="14" rx="7" fill="#8a5a34"/>
+        <rect x="0" y="4" width="300" height="5" rx="2.5" fill="#a97645" opacity="0.7"/>
+        <circle cx="10" cy="11" r="11" fill="#7a4c2a"/>
+        <circle cx="10" cy="11" r="6" fill="#c9a668"/>
+        <circle cx="290" cy="11" r="11" fill="#7a4c2a"/>
+        <circle cx="290" cy="11" r="6" fill="#c9a668"/>
+      </svg>
+    </div>
+
+    <div class="intro-parchment">
+      <div class="intro-seal" aria-hidden="true">
+        <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 6 C70 6 72 16 82 14 C90 12 96 20 92 28 C100 32 100 42 92 46 C98 54 92 62 84 60 C86 70 76 76 68 70 C64 78 54 78 50 70 C42 76 32 70 34 60 C26 62 20 54 26 46 C18 42 18 32 26 28 C22 20 28 12 36 14 C46 16 48 6 60 6 Z"
+                fill="#7a1f2b" stroke="#5c1620" stroke-width="1"/>
+          <circle cx="60" cy="60" r="34" fill="none" stroke="#5c1620" stroke-width="0.8" opacity="0.5"/>
+          <text x="60" y="72" text-anchor="middle" font-family="'Alex Brush', cursive" font-size="42" fill="#e8c88a">J&amp;A</text>
+        </svg>
+      </div>
+      <p class="intro-cta">Toca para abrir<br>nuestra invitación</p>
+    </div>
+
+    <div class="intro-rod intro-rod-bottom" aria-hidden="true">
+      <svg viewBox="0 0 300 22" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="4" width="300" height="14" rx="7" fill="#8a5a34"/>
+        <rect x="0" y="4" width="300" height="5" rx="2.5" fill="#a97645" opacity="0.7"/>
+        <circle cx="10" cy="11" r="11" fill="#7a4c2a"/>
+        <circle cx="10" cy="11" r="6" fill="#c9a668"/>
+        <circle cx="290" cy="11" r="11" fill="#7a4c2a"/>
+        <circle cx="290" cy="11" r="6" fill="#c9a668"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="intro-sparkles" id="introSparkles" aria-hidden="true"></div>
+</div>
+
 <div class="fern-banner" aria-hidden="true"></div>
 
 <div class="petals" id="petals" aria-hidden="true"></div>
@@ -56,7 +97,7 @@
       </h1>
 
       <p class="eyebrow reveal d4">· Nos casamos ·</p>
-      <p class="subtitle reveal d5">y queremos que formes parte<br>de nuestro día</p>
+      <p class="subtitle reveal d5">queremos que formes parte<br>de nuestro día</p>
 
       <div class="details-row reveal d6">
         <div class="detail-block">
