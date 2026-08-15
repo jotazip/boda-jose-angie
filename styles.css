@@ -646,6 +646,16 @@ h1, h2 {
   line-height: 1.5;
 }
 
+.wedding-date {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 1.35rem;
+  letter-spacing: 0.03em;
+  margin: -1rem 0 2rem;
+}
+
 
 .message, .message-accent {
   margin: 0 0 0.3rem;
